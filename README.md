@@ -6,3 +6,4 @@ Osallistujat:
   - Othman Al-Kubaisi (AlkubaisiOthman)
   - Omar Al-kubaisi (omaralkubaisi1)
   - Jenni Oksman (jennioksman)
+  - Ivan Jirki (IvanJirki)
