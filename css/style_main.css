@@ -48,7 +48,7 @@ p {
     margin: 16px 0;
 }
 
-button {
+.btn {
     background-color: #838746; /* olive */
     color: #F5EBB8; /* light beige */
     padding: 8px 16px;
@@ -60,6 +60,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.btn:hover {
     background-color: #DB9B31; /* light brown */
 }
