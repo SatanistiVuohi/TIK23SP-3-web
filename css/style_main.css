@@ -63,6 +63,7 @@ p {
 .btn:hover {
     background-color: #DB9B31; /* light brown */
 }
-img {
-    width: 20%;
+
+#mango {
+    border: 2px solid #000000;
 }
