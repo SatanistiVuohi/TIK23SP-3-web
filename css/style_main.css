@@ -63,3 +63,6 @@ button {
 button:hover {
     background-color: #DB9B31; /* light brown */
 }
+img {
+    width: 20%;
+}
