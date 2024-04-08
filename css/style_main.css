@@ -76,3 +76,15 @@ img:hover {
 #text {
     text-align: justify;
 }
+
+.card-deck {
+    display: flex;
+    flex-flow: row wrap; /* Asettaa elementit riville ja käärii ne, jos tila loppuu */
+    justify-content: space-around; /* Tasaa kortit siten, että niiden välillä on tilaa */
+  }
+  
+  .card {
+    flex: 18rem; /* Flex-itemin kasvu, kutistuminen ja peruskoko */
+    margin: 10px;
+  }
+  
