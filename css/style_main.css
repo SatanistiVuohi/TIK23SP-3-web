@@ -64,10 +64,6 @@ p {
     background-color: #DB9B31; /* light brown */
 }
 
-#mango {
-    border: 2px solid #000000;
-}
-
 img:hover {
     transform: rotate(360deg);
     transition: 2s; 
