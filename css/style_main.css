@@ -73,7 +73,7 @@ img:hover {
     text-align: justify;
 }
 
-img {
+.card-img-top {
     max-width: 50%;
 }
 
