@@ -35,6 +35,7 @@ footer {
     color: #F5EBB8; /* vaalea beige */
     padding: 16px 0;
     text-align: center;
+    margin-top: auto;
 }
 
 h1 {
@@ -73,8 +74,9 @@ img:hover { /*mango pyörähtää kun hiiri viedään sen päälle*/
     text-align: justify;
 }
 
-.card-img-top {  /*viittaus pelit sivun korttien kuviin*/
-    max-width: 50%;
+.card-img {  /*viittaus pelit sivun korttien kuviin*/
+    max-width: 70%;
+    object-fit: cover;
 }
 
 .card { /*pelit-sivun korttien muotoilu*/
