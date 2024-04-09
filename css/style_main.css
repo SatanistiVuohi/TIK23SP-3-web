@@ -61,11 +61,11 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover { /* nappi tummenee kun hiiri viedään sen päälle */
     background-color: #DB9B31; /* vaaleanruskea */
 }
 
-img:hover { /*mango pyörähtää kun hiiri viedään sen päälle*/
+img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     transform: rotate(360deg);
     transition: 2s; 
     }
@@ -88,7 +88,7 @@ img:hover { /*mango pyörähtää kun hiiri viedään sen päälle*/
     margin-bottom: 2rem;
 }
 
-.nappi { /*nappien muotoilu*/
+.nappi { /*nappien sijainti*/
     margin: 112px 0;
 }
 main .row {
