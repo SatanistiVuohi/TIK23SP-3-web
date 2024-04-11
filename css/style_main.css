@@ -101,3 +101,22 @@ main .row {
     max-width: 100%;
     width: 300px; 
 }
+
+/* Accordion */
+.accordion-item {
+    background-color: #DB9B31;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.accordion-button {
+    color: #000000; 
+    background-color: #DB9B31;}
+
+.accordion-button:hover {
+    background-color: #DB9B31; 
+}
+
+.accordion-body {
+    background-color: #F5EBB8;
+    color: #000000; 
+}
