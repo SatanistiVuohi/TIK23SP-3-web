@@ -104,16 +104,17 @@ main .row {
 
 /* Accordion */
 .accordion-item {
-    background-color: #DB9B31;
+    background-color: #DB9B31 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .accordion-button {
     color: #000000; 
-    background-color: #DB9B31;}
+    background-color: #DB9B31 !important;
+}
 
 .accordion-button:hover {
-    background-color: #DB9B31; 
+    background-color: #DB9B31 !important; 
 }
 
 .accordion-body {
