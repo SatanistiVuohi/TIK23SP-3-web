@@ -3,7 +3,7 @@ let rand_num2 = 0;
 let correctCount = 0;
 let incorrectCount = 0;
 let attempts = 0;
-const maxAttempts = 11;
+const maxAttempts = 10;
 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const endGame = () => {
         const playAgainButton = document.createElement('button');
         playAgainButton.textContent = 'Pelaa uudelleen';
+        playAgainButton.classList.add('play-again-button');
         playAgainButton.addEventListener('click', () => {
             attempts = 0;
             correctCount = 0;
@@ -75,11 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         document.querySelector('#container').appendChild(playAgainButton);
 
-        const nextLevelButton = document.createElement('a');
+        const nextLevelButton = document.createElement('button');
         nextLevelButton.textContent = 'Palaa pelit-sivulle';
-        nextLevelButton.href = '';
+        nextLevelButton.classList.add('palaa-button');
+        nextLevelButton.addEventListener('click', () => {
+            window.location.href = 'pelit.html'; 
+        });
         document.querySelector('#container').appendChild(nextLevelButton);
-
         document.querySelector('#calculate').removeEventListener('click');
     }
 });
