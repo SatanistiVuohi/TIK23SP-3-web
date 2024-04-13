@@ -3,7 +3,8 @@ let rand_num2 = 0;
 let correctCount = 0;
 let incorrectCount = 0;
 let attempts = 0;
-const maxAttempts = 10;
+let currentProgress = 0;
+const maxAttempts = 11;
 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
@@ -71,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
             incorrectCount = 0;
             updateScore();
             randomizeNumbers();
+            // Nollaa progressipalkki
+            resetProgressBar();
+            // Poista "Pelaa uudelleen" -painike
             playAgainButton.remove();
             nextLevelButton.remove();
         });
@@ -85,4 +89,26 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#container').appendChild(nextLevelButton);
         document.querySelector('#calculate').removeEventListener('click');
     }
+
+    function updateProgressBar() {
+        if (currentProgress >= 100 || attempts >= maxAttempts) {
+            return; // Estetään toiminto, jos progressi on jo 100% tai peli on päättynyt
+        }
+        currentProgress += 10;
+        // Tarkistetaan, ettei progressi ylitä 100%
+        if (currentProgress > 100) {
+            currentProgress = 100;
+        }
+        // Päivitetään progressipalkin leveys ja teksti
+        document.getElementById("progress-bar").style.width = currentProgress + "%";
+        document.getElementById("progress-bar").innerHTML = currentProgress + "%";
+    }
+    document.getElementById("calculate").addEventListener("click", updateProgressBar);
+
+    function resetProgressBar() {
+        currentProgress = 0;
+        document.getElementById("progress-bar").style.width = currentProgress + "%";
+        document.getElementById("progress-bar").innerHTML = currentProgress + "%";
+    }
+    document.getElementById("playAgainButton").addEventListener("click", resetProgressBar);
 });

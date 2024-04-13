@@ -120,3 +120,9 @@ img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     font-size: 24px;
     margin-left: 5px;
 }
+.progress-bar {
+    background-color: #DB9B31;
+    font-size: large;
+    height: 30px;
+    
+}
