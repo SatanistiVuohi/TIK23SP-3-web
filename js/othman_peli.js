@@ -4,7 +4,7 @@ let correctCount = 0;
 let incorrectCount = 0;
 let attempts = 0;
 let currentProgress = 0;
-const maxAttempts = 11;
+const maxAttempts = 10; 
 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
@@ -16,8 +16,8 @@ const getRandomIntNumberInRange = (min, max) => {
 }
 
 const randomizeNumbers = () => {
-    rand_num1 = getRandomIntNumberInRange(1 , 10);
-    rand_num2 = getRandomIntNumberInRange(1 , 10);
+    rand_num1 = getRandomIntNumberInRange(1, 10);
+    rand_num2 = getRandomIntNumberInRange(1, 10);
     const operator = getRandomIntNumberInRange(1, 2);
     if (operator === 1) {
         document.querySelector('#num1').textContent = rand_num1;
@@ -36,14 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector('#calculate').addEventListener('click', () => {
         if (attempts >= maxAttempts) {
-            return; // Estetään toiminto, jos peli on päättynyt
+            endGame();
+            return;
         }
 
         const answer = Number(document.querySelector('input').value);
         const correctAnswer = eval(document.querySelector('#num1').textContent + document.querySelector('#operator').textContent + document.querySelector('#num2').textContent);
         const messageElement = document.querySelector('#message');
-        
-        attempts++;
 
         if (answer === correctAnswer) {
             messageElement.textContent = 'Oikein!';
@@ -53,62 +52,57 @@ document.addEventListener("DOMContentLoaded", () => {
             incorrectCount++;
         }
 
-        if (attempts === maxAttempts) {
+        attempts++;
+        updateProgressBar();
+
+        if (attempts >= maxAttempts) {
+            document.querySelector('#calculate').disabled = true; // Deaktivoi Vastaa-nappi
             endGame();
+        } else {
+            randomizeNumbers();
         }
-        
-        randomizeNumbers();
+
         document.querySelector('input').value = '';
         updateScore();
     });
 
     const endGame = () => {
-        const playAgainButton = document.createElement('button');
-        playAgainButton.textContent = 'Pelaa uudelleen';
-        playAgainButton.classList.add('play-again-button');
-        playAgainButton.addEventListener('click', () => {
-            attempts = 0;
-            correctCount = 0;
-            incorrectCount = 0;
-            updateScore();
-            randomizeNumbers();
-            // Nollaa progressipalkki
-            resetProgressBar();
-            // Poista "Pelaa uudelleen" -painike
-            playAgainButton.remove();
-            nextLevelButton.remove();
-        });
-        document.querySelector('#container').appendChild(playAgainButton);
+        if (!document.querySelector('.play-again-button')) { 
+            const playAgainButton = document.createElement('button');
+            playAgainButton.textContent = 'Pelaa uudelleen';
+            playAgainButton.classList.add('play-again-button');
+            playAgainButton.addEventListener('click', () => {
+                attempts = 0;
+                correctCount = 0;
+                incorrectCount = 0;
+                updateScore();
+                randomizeNumbers();
+                resetProgressBar();
+                playAgainButton.remove();
+                nextLevelButton.remove();
+                document.querySelector('#calculate').disabled = false; // Aktivoi Vastaa-nappi
+            });
+            document.querySelector('#container').appendChild(playAgainButton);
 
-        const nextLevelButton = document.createElement('button');
-        nextLevelButton.textContent = 'Palaa pelit-sivulle';
-        nextLevelButton.classList.add('palaa-button');
-        nextLevelButton.addEventListener('click', () => {
-            window.location.href = 'pelit.html'; 
-        });
-        document.querySelector('#container').appendChild(nextLevelButton);
-        document.querySelector('#calculate').removeEventListener('click');
+            const nextLevelButton = document.createElement('button');
+            nextLevelButton.textContent = 'Palaa pelit-sivulle';
+            nextLevelButton.classList.add('palaa-button');
+            nextLevelButton.addEventListener('click', () => {
+                window.location.href = 'pelit.html';
+            });
+            document.querySelector('#container').appendChild(nextLevelButton);
+        }
     }
 
     function updateProgressBar() {
-        if (currentProgress >= 100 || attempts >= maxAttempts) {
-            return; // Estetään toiminto, jos progressi on jo 100% tai peli on päättynyt
-        }
-        currentProgress += 10;
-        // Tarkistetaan, ettei progressi ylitä 100%
-        if (currentProgress > 100) {
-            currentProgress = 100;
-        }
-        // Päivitetään progressipalkin leveys ja teksti
+        currentProgress = (attempts / maxAttempts) * 100;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
-    document.getElementById("calculate").addEventListener("click", updateProgressBar);
 
     function resetProgressBar() {
         currentProgress = 0;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
-    document.getElementById("playAgainButton").addEventListener("click", resetProgressBar);
 });
