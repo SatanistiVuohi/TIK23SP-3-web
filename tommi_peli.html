@@ -7,7 +7,7 @@
     <title>Matikka-pelisivusto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style_main.css">
+    <link rel="stylesheet" href="css/tommi_peli.css">
 </head>
 
 <body class="font-josefin-sans">
@@ -21,8 +21,8 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav grid gap-2 h3">
-                        <a class="nav-link active" aria-current="page" href="index.html">Koti</a>
-                        <a class="nav-link" href="pelit.html">Pelit</a>
+                        <a class="nav-link" href="index.html">Koti</a>
+                        <a class="nav-link active" aria-current="page" href="pelit.html">Pelit</a>
                         <a class="nav-link" href="tulokset.html">Tulokset</a>
                         <a class="nav-link" href="info.html">Tietoa meistä</a>
                     </div>
@@ -32,6 +32,27 @@
     </header>
 
     <main>
+        <h1>Valitse oikea pituuden yksikkö</h1>
+        <form id="questionform">
+            <h4 id="question"></h4>
+            <input type="radio" class="btn-check" name="selection" id="optionA" value="optionA" autocomplete="off">
+            <label class="btn" for="optionA"></label>
+
+            <input type="radio" class="btn-check" name="selection" id="optionB" value="optionB" autocomplete="off">
+            <label class="btn" for="optionB"></label>
+
+            <input type="radio" class="btn-check" name="selection" id="optionC" value="optionC" autocomplete="off">
+            <label class="btn" for="optionC"></label>
+
+            <input type="radio" class="btn-check" name="selection" id="optionD" value="optionD" autocomplete="off">
+            <label class="btn" for="optionD"></label>
+
+            <input type="submit" value="Answer" id="answer">
+        </form>
+        <h1 id="result"></h1>
+
+        <img src="/images/mangohappy.png" alt="oikein" id="oikein" style="display: none;">
+        <img src="/images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
 
     </main>
     <footer>
@@ -42,7 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/tommi_peli.js"></script>
 </body>
 
 </html>
