@@ -67,27 +67,23 @@ p {
 #calculate:hover{
     background-color: #DB9B31; /* Vaaleanruskea */
 }
-
-
-img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
-    transform: rotate(360deg);
-    transition: 2s; 
-    }
+#kuva{
+    width: 300px;
+    height: auto;
+}
+.rotate-image {
+        transform: rotate(360deg);
+        transition: transform 1.2s ease; /* Lisää siirtymäefekti, jotta kierto tapahtuu pehmeästi */
+ }
 
 #text {
     text-align: justify;
 }
-
-.mango-container {
-    max-width: 100%;
-    width: 300px; 
-}
-
 /* Pelin osien fonttikoko */
 #num1, #num2, #operator, input[type="number"], button#calculate, #correctCount, #incorrectCount, #message {
     font-size: 24px; 
 }
-.play-again-button {
+.play-again-button , .palaa-button {
     background-color: #838746; /* oliivi */
     color: #F5EBB8; /* vaalea beige */
     padding: 8px 16px;
@@ -101,24 +97,6 @@ img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     margin-bottom: 10px;
     margin-right: 5px;
     font-size: 24px;
-}
-.play-again-button:hoover {
-    background-color: #DB9B31; /* Vaaleanruskea */
-}
-.palaa-button{
-    background-color: #838746; /* oliivi */
-    color: #F5EBB8; /* vaalea beige */
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem; /* 16px */
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 24px;
-    margin-left: 5px;
 }
 .progress-bar {
     background-color: #DB9B31;

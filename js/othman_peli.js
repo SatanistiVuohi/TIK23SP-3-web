@@ -4,7 +4,7 @@ let correctCount = 0;
 let incorrectCount = 0;
 let attempts = 0;
 let currentProgress = 0;
-const maxAttempts = 10; 
+const maxAttempts = 10;
 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
@@ -46,26 +46,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (answer === correctAnswer) {
             messageElement.textContent = 'Oikein!';
-            correctCount++;
+            correctCount++;          
         } else {
             messageElement.textContent = 'Väärin!';
             incorrectCount++;
         }
-
+        const calculateButton = document.querySelector('#calculate');
         attempts++;
         updateProgressBar();
-
         if (attempts >= maxAttempts) {
             document.querySelector('#calculate').disabled = true; // Deaktivoi Vastaa-nappi
+            if (calculateButton) {
+                calculateButton.style.display = 'none'; //  Vastaa-nappi poistuu 
+            }
             endGame();
+            document.getElementById('kuva').classList.add('rotate-image'); // kuva pyörähtää jos oikea vastaus // 
+
         } else {
             randomizeNumbers();
         }
-
         document.querySelector('input').value = '';
         updateScore();
     });
-
     const endGame = () => {
         if (!document.querySelector('.play-again-button')) { 
             const playAgainButton = document.createElement('button');
@@ -80,10 +82,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 resetProgressBar();
                 playAgainButton.remove();
                 nextLevelButton.remove();
-                document.querySelector('#calculate').disabled = false; // Aktivoi Vastaa-nappi
+                window.location.reload();
             });
             document.querySelector('#container').appendChild(playAgainButton);
-
+            const operationDiv = document.querySelector('form div');
+            if (operationDiv) {
+                operationDiv.style.display = 'none';  // Input ja Output kenttien poisto
+            }
             const nextLevelButton = document.createElement('button');
             nextLevelButton.textContent = 'Palaa pelit-sivulle';
             nextLevelButton.classList.add('palaa-button');
@@ -93,13 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('#container').appendChild(nextLevelButton);
         }
     }
-
     function updateProgressBar() {
         currentProgress = (attempts / maxAttempts) * 100;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
-
     function resetProgressBar() {
         currentProgress = 0;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
