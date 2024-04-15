@@ -1,0 +1,8 @@
+.btn.selected {
+    background-color: #DB9B31; /* Matches the hover color */
+}
+#img.happymango {
+    position: fixed;
+    top: 50px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+}
