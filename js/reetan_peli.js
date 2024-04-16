@@ -58,6 +58,7 @@ function getEventListener() {
     if (correctCount + incorrectCount < 10) { 
         startRound(); // Aloita uusi kierros
     } else {
+        // TODO: tallenna pisteet tässä
         showOptions(); //Näytä 'options' pelin päätyttyä
     }
 }
