@@ -1,0 +1,40 @@
+
+.special-link:link {
+    background-color:#DB9B31;
+    color: black;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 30px;
+    border-radius: 1rem;
+    margin-bottom: 1em;
+  }
+  
+  .special-link:hover, .special-link:active {
+    background-color: #BF5F10;
+  }
+  
+  #calculate {
+    background-color: #DB9B31;
+    border-radius: 1rem;
+    padding: 7px;
+    border-width: 1px;
+  }
+  
+  #game {
+    font-size: 2em;
+  }
+  
+  #number {
+    border-radius: 1em;
+  }
+  
+  #pisteet {
+    font-size: 28px; 
+  }
+  
+  #reetanOtsikko {
+    font-size: 2rem;
+    padding-top: 1em;
+  }
+  
