@@ -23,11 +23,12 @@ header {
     text-align: center;
 }
 
-main .container {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 footer {
@@ -42,6 +43,7 @@ h1 {
     margin: 0;
     font-size: 1.875rem; /* 30px */
     font-weight: 700;
+    padding: 50px;
 }
 
 p {
@@ -66,7 +68,7 @@ p {
 }
 
 img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
-    transform: rotate(360deg);
+    transform: rotate(720deg);
     transition: 2s; 
     }
 
@@ -79,3 +81,7 @@ img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     width: 300px; 
 }
 
+
+.btn-check:hover {
+    background-color: #DB9B31; /* Matches the hover color */
+}

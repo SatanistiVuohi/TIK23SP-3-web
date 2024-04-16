@@ -32,25 +32,22 @@
     </header>
 
     <main>
-        <h1>Valitse oikea pituuden yksikkö</h1>
-        <form id="questionform">
-            <h4 id="question"></h4>
-            <input type="radio" class="btn-check" name="selection" id="optionA" value="optionA" autocomplete="off">
-            <label class="btn" for="optionA"></label>
 
-            <input type="radio" class="btn-check" name="selection" id="optionB" value="optionB" autocomplete="off">
-            <label class="btn" for="optionB"></label>
+        <div id="quiz-container">
+            <form id="questionform">
+                <h1>Valitse oikea pituuden vastaus</h1>
+                <h4 id="question"></h4>
+                <div id="options-container"></div>
+                <input type="submit" class="btn" value="Answer" id="answer">
+                <h1 id="oikeinvaarin"></h1>
+            </form>
 
-            <input type="radio" class="btn-check" name="selection" id="optionC" value="optionC" autocomplete="off">
-            <label class="btn" for="optionC"></label>
-
-            <input type="radio" class="btn-check" name="selection" id="optionD" value="optionD" autocomplete="off">
-            <label class="btn" for="optionD"></label>
-
-            <input type="submit" value="Answer" id="answer">
-        </form>
-        <h1 id="result"></h1>
-
+            <h1 id="result"></h1>
+            <button id="playAgain" class="btn btn-primary" style="display: none;" onclick="resetGame()">Pelaa
+                uudestaan</button>
+            <button id="return" class="btn btn-primary" style="display: none;" onclick="returnPelit()">Palaa
+                pelivalikkoon</button>
+        </div>
         <img src="/images/mangohappy.png" alt="oikein" id="oikein" style="display: none;">
         <img src="/images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
 
