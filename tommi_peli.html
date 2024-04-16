@@ -31,25 +31,26 @@
         </nav>
     </header>
 
-    <main>
+    <main class="d-flex flex-column justify-content-center align-items-center text-center">
 
-        <div id="quiz-container">
+        <div id="quiz-container" class="container">
+            <h1 id="otsikko">Valitse oikea vastaus</h1>
             <form id="questionform">
-                <h1>Valitse oikea pituuden vastaus</h1>
-                <h4 id="question"></h4>
+                <h3 id="question"></h3>
                 <div id="options-container"></div>
                 <input type="submit" class="btn" value="Answer" id="answer">
                 <h1 id="oikeinvaarin"></h1>
             </form>
-
             <h1 id="result"></h1>
-            <button id="playAgain" class="btn btn-primary" style="display: none;" onclick="resetGame()">Pelaa
+            <button id="playAgain" class="btn" style="display: none;" onclick="resetGame()">Pelaa
                 uudestaan</button>
-            <button id="return" class="btn btn-primary" style="display: none;" onclick="returnPelit()">Palaa
+            <button id="return" class="btn" style="display: none;" onclick="returnPelit()">Palaa
                 pelivalikkoon</button>
         </div>
-        <img src="/images/mangohappy.png" alt="oikein" id="oikein" style="display: none;">
-        <img src="/images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
+        <div id="images">
+            <img src="/images/mangohappy.png" alt="oikein" id="oikein" style="display: block;">
+            <img src="/images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
+        </div>
 
     </main>
     <footer>

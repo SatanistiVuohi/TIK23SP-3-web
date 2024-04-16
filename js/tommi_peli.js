@@ -147,6 +147,7 @@ function nextQuestion() {
         document.getElementById('questionform').style.display = 'none';
         document.getElementById('playAgain').style.display = 'block';
         document.getElementById('return').style.display = 'block';
+        document.getElementById('otsikko').textContent = 'Pääsit loppuun!';
     }
 
 // Resetoidaan muotoilut

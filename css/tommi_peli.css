@@ -3,7 +3,7 @@
     src: url(../fonts/JosefinSans-Regular.ttf)
 }
 
-body, h1, p, button {
+body,h1,p,button {
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -23,14 +23,6 @@ header {
     text-align: center;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 footer {
     background-color: #838746; /* oliivi */
     color: #F5EBB8; /* vaalea beige */
@@ -41,7 +33,6 @@ footer {
 
 h1 {
     margin: 0;
-    font-size: 1.875rem; /* 30px */
     font-weight: 700;
     padding: 50px;
 }
@@ -52,36 +43,40 @@ p {
 }
 
 .btn {
-    background-color: #838746; /* oliivi */
-    color: #F5EBB8; /* vaalea beige */
+    background-color: #838746; /* Normaali taustaväri */
+    color: #F5EBB8; /* Vaalea beige */
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    font-size: 1rem; /* 16px */
+    font-size: 1.5rem; /* 24px */
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 20px;
 }
 
-.btn:hover { /* nappi tummenee kun hiiri viedään sen päälle */
-    background-color: #DB9B31; /* vaaleanruskea */
+.btn:hover {
+    background-color: #DB9B31 !important; /* Hiiren ollessa napin päällä */
 }
+
+.btn-check:checked + .btn {
+    background-color: #DB9B31; /* Valitun napin väri */
+}
+
 
 img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     transform: rotate(720deg);
-    transition: 2s; 
-    }
-
-#text {
-    text-align: justify;
+    transition: 2s;
 }
 
-.mango-container {
-    max-width: 100%;
-    width: 300px; 
+img {
+    margin: 50px;
 }
 
+.container button {
+    width: 300px;
+}
 
-.btn-check:hover {
-    background-color: #DB9B31; /* Matches the hover color */
+.answer {
+    width: 100%;
 }
