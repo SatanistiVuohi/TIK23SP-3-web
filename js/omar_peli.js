@@ -94,9 +94,9 @@ const endGame = () => {
     if (!document.querySelector('#nextLevelButton')) {
         const nextLevelButton = document.createElement('button');
         nextLevelButton.id = 'nextLevelButton';
-        nextLevelButton.textContent = 'Siirry seuraavalle tasolle';
+        nextLevelButton.textContent = 'Palaa peleihin!';
         nextLevelButton.addEventListener('click', () => {
-            alert('Siirrytään seuraavalle tasolle!');
+            window.location.href = 'pelit.html';
         });
         document.querySelector('#container').appendChild(nextLevelButton);
     }
