@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.timestable-button').forEach(button => {
         button.addEventListener('click', () => {
             timestable = parseInt(button.textContent)
-            numberOfTask = 0 //Nollataan tehtälaskuri uuden kertotaulun valinnan yhteydessä
             newGame()
             choise.innerHTML = ""
         })
