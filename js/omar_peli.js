@@ -4,7 +4,7 @@ let correctCount = 0;
 let incorrectCount = 0;
 let attempts = 0;
 const maxAttempts = 10;
-let askedQuestions = new Set(); // Kysyttyjen kysymysten tallennus
+let askedQuestions = new Set();
 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
@@ -17,13 +17,11 @@ const getRandomIntNumberInRange = (min, max) => {
 
 const randomizeNumbers = () => {
     do {
-        // Vain 1-5 ja 10 ovat sallittuja jakajia
         const allowedDenominators = [1, 2, 3, 4, 5, 10];
         rand_num2 = allowedDenominators[Math.floor(Math.random() * allowedDenominators.length)];
-        // Valitaan satunnainen kerroin 1-10, jotta tulos on yhä ymmärrettävässä kokoluokassa
         const multiplier = getRandomIntNumberInRange(1, 10);
         rand_num1 = rand_num2 * multiplier;
-    } while (askedQuestions.has(`${rand_num1}/${rand_num2}`)); // Varmistetaan, ettei samaa kysymystä kysytä uudestaan
+    } while (askedQuestions.has(`${rand_num1}/${rand_num2}`));
 
     askedQuestions.add(`${rand_num1}/${rand_num2}`);
     document.querySelector('#num1').textContent = rand_num1;
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateScore();
 
     document.querySelector('#calculate').addEventListener('click', () => {
-        attempts++; // Lisätään yritys heti, jotta voidaan tarkistaa onko peli loppu
+        attempts++;
 
         const answer = Number(document.querySelector('input').value);
         const correctAnswer = rand_num1 / rand_num2;
@@ -50,12 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             messageElement.textContent = 'Väärin!';
         }
 
-        updateScore(); // Päivitetään pisteet jokaisen vastauksen jälkeen
+        updateScore();
 
         if (attempts < maxAttempts) {
             randomizeNumbers();
         } else {
-            endGame(); // Päättää pelin, jos yritykset ovat loppuneet
+            endGame();
         }
 
         document.querySelector('input').value = '';
@@ -63,30 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const endGame = () => {
-    // Poistetaan kuuntelija, ettei lisää vastauksia oteta vastaan
     document.querySelector('#calculate').removeEventListener('click', handleCalculateClick);
-
-    // Piilotetaan koko laskutoimituksen sisältävä div, jotta myös / ja = merkit ja "Vastaa" painike katoavat näkyvistä
     const operationDiv = document.querySelector('form div');
     if (operationDiv) {
         operationDiv.style.display = 'none';
     }
-
-    // Piilotetaan "Vastaa" painike erikseen, jos se on sijoitettu eri diviin kuin laskutoimitus
     const calculateButton = document.querySelector('#calculate');
     if (calculateButton) {
         calculateButton.style.display = 'none';
     }
 
-    updateScore(); // Päivitetään pisteet viimeisen kerran
-
-    // Lisätään "Pelaa uudelleen" ja "Siirry seuraavalle tasolle" -painikkeet, jos niitä ei ole jo
+    updateScore();
     if (!document.querySelector('#playAgainButton')) {
         const playAgainButton = document.createElement('button');
         playAgainButton.id = 'playAgainButton';
         playAgainButton.textContent = 'Pelaa uudelleen';
         playAgainButton.addEventListener('click', () => {
-            window.location.reload(); // Sivun uudelleenlataus aloittaa pelin alusta
+            window.location.reload();
         });
         document.querySelector('#container').appendChild(playAgainButton);
     }
@@ -101,10 +92,6 @@ const endGame = () => {
         document.querySelector('#container').appendChild(nextLevelButton);
     }
 }
-
-// Huomaa, että funktio 'handleCalculateClick' on olemassa vain, jos se on jo määritelty aiemmin.
-// Jos sitä ei ole määritelty, voit jättää tämän osan pois tai korvata 'handleCalculateClick' 
-// suoralla viittauksella funktion sisältöön tapahtumankäsittelijässä.
 
 
 const handleCalculateClick = () => {
