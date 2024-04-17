@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const messageElement = document.querySelector('#message');
         messageElement.style.marginBottom = '10px'
         messageElement.style.fontWeight = 'bold';
-        messageElement.style.color ='#BF5F10';
+        messageElement.style.color = '#BF5F10';
 
         if (answer === correctAnswer) {
             messageElement.textContent = 'Oikein!';
@@ -65,10 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
             endGame();
             document.getElementById('kuva').classList.add('rotate-image'); // kuva pyörähtää jos oikea vastaus // 
 
+            // Tallenna pistemäärät SessionStorageen // 
+            sessionStorage.setItem('correctCount', correctCount);
+            sessionStorage.setItem('incorrectCount', incorrectCount);
+
         } else {
             // Aseta viive seuraavan kysymyksen näyttämiseen
             setTimeout(() => {
                 randomizeNumbers();
+                enableCalculateButton(); // Aktivoi Vastaa-nappi uudelleen
             }, 2000); // Muuta viiveen pituutta tarvittaessa (2000ms = 2 sekuntia)
         }
 
@@ -79,10 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelector('input').value = '';
         updateScore();
+        disableCalculateButton(); // Poista Vastaa-nappi väliaikaisesti käytöstä
     });
 
     const endGame = () => {
-        if (!document.querySelector('.play-again-button')) { 
+        if (!document.querySelector('.play-again-button')) {
             const playAgainButton = document.createElement('button');
             playAgainButton.textContent = 'Pelaa uudelleen';
             playAgainButton.classList.add('play-again-button');
@@ -122,5 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
         currentProgress = 0;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
+    }
+
+    function disableCalculateButton() {
+        document.querySelector('#calculate').disabled = true;
+    }
+
+    function enableCalculateButton() {
+        document.querySelector('#calculate').disabled = false;
     }
 });
