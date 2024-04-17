@@ -13,21 +13,15 @@ const getNumbers = () => { //Arvotaan numerot 1-10 taulukkoon satunnaisessa jär
 }
 
 const showButtons = () => {
-    document.getElementById("b1").style.display = "block"
-    document.getElementById("b2").style.display = "block"
-    document.getElementById("b3").style.display = "block"
-    document.getElementById("b4").style.display = "block"
-    document.getElementById("b5").style.display = "block"
-    document.getElementById("b10").style.display = "block"
+    document.querySelectorAll('.timestable-button').forEach(button => {
+        button.style.display = "block"
+    })
 }
 
 const hideButtons = () => {
-    document.getElementById("b1").style.display = "none"
-    document.getElementById("b2").style.display = "none"
-    document.getElementById("b3").style.display = "none"
-    document.getElementById("b4").style.display = "none"
-    document.getElementById("b5").style.display = "none"
-    document.getElementById("b10").style.display = "none"
+    document.querySelectorAll('.timestable-button').forEach(button => {
+        button.style.display = "none"
+    })
 }
 
 const showField = () => {
