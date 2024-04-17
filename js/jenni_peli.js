@@ -56,6 +56,7 @@ const getTask = () => { //Muodostetaan uusi tehtävä
 }
 
 const newGame = () => { //Aloitetaan uusi peli
+    score.innerHTML = ""
     getNumbers()
     getTask()
     hideButtons()
@@ -75,8 +76,8 @@ const nextTask = () => { //Muodotetaan seuraava tehtävä kunnes on muodostettu 
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const choise = document.querySelector("#choise")
-    choise.innerHTML = "Valitse kertotaulu:"
+    const score = document.querySelector("#score")
+    score.innerHTML = "Valitse kertotaulu:"
     showButtons()
     document.querySelectorAll('.timestable-button').forEach(button => {
         button.addEventListener('click', () => {
