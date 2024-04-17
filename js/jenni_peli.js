@@ -39,10 +39,6 @@ const showOptions = () => {
     document.getElementById("newgame").style.display = "block"
 }
 
-const hideTask = () => {
-    document.getElementById("task").style.display = "none"
-}
-
 const getTask = () => { //Muodostetaan uusi tehtävä
     const multiplier = numbers.shift(0) //Poistetaan numbers-taulukon indeksi 0 ja asetetaan se multiplier-muutujaan
     correctAnswer = multiplier * timestable
