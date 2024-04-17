@@ -43,12 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const answer = Number(document.querySelector('input').value);
         const correctAnswer = eval(document.querySelector('#num1').textContent + document.querySelector('#operator').textContent + document.querySelector('#num2').textContent);
         const messageElement = document.querySelector('#message');
+        messageElement.style.marginBottom = '10px'
+        messageElement.style.fontWeight = 'bold';
+        messageElement.style.color ='#BF5F10';
 
         if (answer === correctAnswer) {
             messageElement.textContent = 'Oikein!';
-            correctCount++;          
+            correctCount++;
         } else {
-            messageElement.textContent = 'Väärin!';
+            messageElement.textContent = `Väärin! Oikea vastaus on ${correctAnswer}.`
             incorrectCount++;
         }
         const calculateButton = document.querySelector('#calculate');
@@ -63,11 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('kuva').classList.add('rotate-image'); // kuva pyörähtää jos oikea vastaus // 
 
         } else {
-            randomizeNumbers();
+            // Aseta viive seuraavan kysymyksen näyttämiseen
+            setTimeout(() => {
+                randomizeNumbers();
+            }, 2000); // Muuta viiveen pituutta tarvittaessa (2000ms = 2 sekuntia)
         }
+
+        // Aseta ajastin tekstin piilottamiselle
+        const messageTimer = setTimeout(() => {
+            messageElement.textContent = '';
+        }, 2000); // Muuta viiveen pituutta tarvittaessa (2000ms = 2 sekuntia)
+
         document.querySelector('input').value = '';
         updateScore();
     });
+
     const endGame = () => {
         if (!document.querySelector('.play-again-button')) { 
             const playAgainButton = document.createElement('button');
@@ -98,11 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('#container').appendChild(nextLevelButton);
         }
     }
+
     function updateProgressBar() {
         currentProgress = (attempts / maxAttempts) * 100;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
+
     function resetProgressBar() {
         currentProgress = 0;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
