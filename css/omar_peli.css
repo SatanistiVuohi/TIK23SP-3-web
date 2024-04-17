@@ -74,9 +74,7 @@ button:hover {
     background-color: #DB9B31; /* light brown */
 }
 
-#image-container {
-    position: fixed;
-    top: 50%;
-    left: 50px; /* Aseta kuva vasemmalle reunaan */
-    transform: translate(0, -50%);
+#kuva {
+    width: 200px;
+    height: auto;
 }
