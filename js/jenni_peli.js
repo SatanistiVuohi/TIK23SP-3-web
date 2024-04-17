@@ -45,6 +45,10 @@ const showOptions = () => {
     document.getElementById("newgame").style.display = "block"
 }
 
+const hideTask = () => {
+    document.getElementById("task").style.display = "none"
+}
+
 const getTask = () => { //Muodostetaan uusi tehtävä
     const multiplier = numbers.shift(0) //Poistetaan numbers-taulukon indeksi 0 ja asetetaan se multiplier-muutujaan
     correctAnswer = multiplier * timestable
@@ -94,12 +98,16 @@ document.getElementById("check").addEventListener("click", () => {
         img.classList.add("rotate")
         setTimeout(() => { 
             img.classList.remove("rotate")
-        }, 2000) //Asetetaan animaation kesto
-        nextTask() //Siirry seuraavaan tehtävään
+            nextTask() //Siirry seuraavaan tehtävään
+        }, 1500) //Asetetaan animaation kesto
+        
             
     } else {
         result.innerHTML = "Ei aivan! Oikea vastaus on " + correctAnswer + "."
-        nextTask() //Siirry seuraavaan tehtävään
+        
+        setTimeout(() => {
+            nextTask() //Siirry seuraavaan tehtävään
+        }, 1500)
     }
     document.getElementById("answer").value = ""
     setTimeout(() => { 
