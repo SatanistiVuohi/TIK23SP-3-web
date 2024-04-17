@@ -1,0 +1,17 @@
+#answer {
+    border-radius: 5px;
+    height: 3rem;
+}
+
+#task, #feedback {
+    font-size: 1.8rem;
+}
+
+.rotate { /*kuva pyörähtää*/
+    transform: rotate(360deg);
+    transition: 2s; 
+}
+
+#back, #newgame, #b1, #b2, #b3, #b4, #b5, #b10, #answer, #check {
+    display: none;
+}
