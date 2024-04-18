@@ -1,82 +1,36 @@
-@font-face {
-    font-family: 'Josefin Sans';
-    src: url(../fonts/JosefinSans-Regular.ttf)
-}
-
-body,h1,p,button {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-body {
-    background-color: #F5EBB8; /* vaalea beige */
-    color: #000000; /* musta */
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background-color: #BF5F10; /* ruskea */
-    color: #DB9B31; /* vaaleanruskea */
-    padding: 24px 0;
-    text-align: center;
-}
-
-footer {
-    background-color: #838746; /* oliivi */
-    color: #F5EBB8; /* vaalea beige */
-    padding: 16px 0;
-    text-align: center;
-    margin-top: auto;
-}
-
-h1 {
-    margin: 0;
-    font-weight: 700;
-    padding: 50px;
-}
-
-p {
-    font-size: 1.5rem; /* 24px */
-    margin: 16px 0;
-}
-
 .btn {
-    background-color: #838746; /* Normaali taustaväri */
-    color: #F5EBB8; /* Vaalea beige */
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.5rem; /* 24px */
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 20px;
+    margin: 10px;
+    width: 100px;
 }
 
 .btn:hover {
-    background-color: #DB9B31 !important; /* Hiiren ollessa napin päällä */
+    background-color: #DB9B31 !important;
 }
 
-.btn-check:checked + .btn {
-    background-color: #DB9B31; /* Valitun napin väri */
+.btn-check:checked+.btn {
+    background-color: #DB9B31;
 }
 
-
-img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
-    transform: rotate(720deg);
-    transition: 2s;
+.btn:disabled {
+    background-color: #DB9B31;
 }
 
 img {
+    max-width: 100%;
     margin: 50px;
+    width: 60%;
 }
 
-.container button {
+.btn-check {
+    width: 100px;
+}
+
+#playAgain, #return {
+    display: none;
     width: 300px;
+    margin-top: 50px;
 }
 
-.answer {
-    width: 100%;
+#answer {
+    width: 200px;
 }
