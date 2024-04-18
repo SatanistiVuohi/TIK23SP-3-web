@@ -7,7 +7,8 @@
     <title>Matikka-pelisivusto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/tommi_peli.css">
+    <link rel="stylesheet" href="./css/style_main.css">
+    <link rel="stylesheet" href="./css/tommi_peli.css">
 </head>
 
 <body class="font-josefin-sans">
@@ -21,37 +22,42 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav grid gap-2 h3">
-                        <a class="nav-link" href="index.html">Koti</a>
-                        <a class="nav-link active" aria-current="page" href="pelit.html">Pelit</a>
-                        <a class="nav-link" href="tulokset.html">Tulokset</a>
-                        <a class="nav-link" href="info.html">Tietoa meistä</a>
+                        <a class="nav-link" href="./index.html">Koti</a>
+                        <a class="nav-link active" aria-current="page" href="./pelit.html">Pelit</a>
+                        <a class="nav-link" href="./tulokset.html">Tulokset</a>
+                        <a class="nav-link" href="./info.html">Tietoa meistä</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="d-flex flex-column justify-content-center align-items-center text-center">
+    <main>
+        <div class="row my-5 py-5 align-items-center justify-content-center">
+            <div class="col-md-4">
+                <h1 class="d-flex justify-content-center" id="otsikko">Valitse oikea vastaus</h1>
+                <form id="questionform">
+                    <h3 class="d-flex justify-content-center text-center" id="question"></h3>
+                    <div class="d-flex justify-content-center" id="options-container"></div>
+                    <div class="d-flex justify-content-center mx-auto">
+                        <input type="submit" class="btn d-flex" value="Tarkista" id="answer">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="d-flex justify-content-center" id="oikeinvaarin"></div>
+                </form>
 
-        <div id="quiz-container" class="container">
-            <h1 id="otsikko">Valitse oikea vastaus</h1>
-            <form id="questionform">
-                <h3 id="question"></h3>
-                <div id="options-container"></div>
-                <input type="submit" class="btn" value="Answer" id="answer">
-                <h1 id="oikeinvaarin"></h1>
-            </form>
-            <h1 id="result"></h1>
-            <button id="playAgain" class="btn" style="display: none;" onclick="resetGame()">Pelaa
-                uudestaan</button>
-            <button id="return" class="btn" style="display: none;" onclick="returnPelit()">Palaa
-                pelivalikkoon</button>
+                <h1 class="d-flex justify-content-center" id="result"></h1>
+                <div class="d-flex justify-content-center">
+                    <button id="playAgain" class="btn" onclick="resetGame()">Pelaa uudestaan</button>
+                    <button id="return" class="btn" onclick="returnPelit()">Palaa pelivalikkoon</button>
+                </div>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center">
+                <img src="./images/mangohappy.png" alt="oikein" id="oikein" style="display: inline;">
+                <img src="./images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
+            </div>
         </div>
-        <div id="images">
-            <img src="/images/mangohappy.png" alt="oikein" id="oikein" style="display: block;">
-            <img src="/images/mangosweat.png" alt="väärin" id="vaarin" style="display: none;">
-        </div>
-
     </main>
     <footer>
         <p class="text-center">© 2024 Matikka-Mango - Tommi Kumpula</p>
@@ -61,7 +67,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="js/tommi_peli.js"></script>
+    <script src="./js/tommi_peli.js"></script>
 </body>
 
 </html>

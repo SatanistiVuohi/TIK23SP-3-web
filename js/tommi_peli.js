@@ -102,10 +102,12 @@ function createOptionElement(option, index) {
 function answer(e) {
     e.preventDefault();
 
+    document.getElementById('answer').disabled = true;
+
     let formdata = new FormData(e.currentTarget);
 
     // Tarkistetaan valinta ja verrataan sitä oikeaan vastukseen
-    // Vaihdetaan kuva ja teksti riippuen vastauksen oikeellisuudesta.
+    // Vaihdetaan kuva ja teksti riippuen meinikö vastaus väärin vai oikein
     if (formdata.get('selection') === questions[index].answer) {
         points++;
         questionElement.classList.add('correct');
@@ -116,15 +118,17 @@ function answer(e) {
         questionElement.classList.add('incorrect');
         document.getElementById('oikein').style.display = 'none';
         document.getElementById('vaarin').style.display = 'block';
-        document.getElementById('oikeinvaarin').textContent = 'Äh, väärin meni! :(';
+        document.getElementById('oikeinvaarin').textContent = 'Äh, väärin meni! :( Oikea vastaus oli: ' + questions[index].answer;
     }
 
     // Päivitetään sivulle käyttäjän pisteet
     document.getElementById('result').textContent =
         "Pisteesi: " + points + "/" + questions.length;
 
-    nextQuestion();
+    setTimeout(nextQuestion, 3000);
+
 }
+
 
 
 
@@ -150,8 +154,10 @@ function nextQuestion() {
         document.getElementById('otsikko').textContent = 'Pääsit loppuun!';
     }
 
-// Resetoidaan muotoilut
-questionElement.classList.remove('correct', 'incorrect');
+    // Resetoidaan muotoilut
+    questionElement.classList.remove('correct', 'incorrect');
+    document.getElementById('answer').disabled = false;
+    document.getElementById('oikeinvaarin').textContent = "";
 }
 
 
