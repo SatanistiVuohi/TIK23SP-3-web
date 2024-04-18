@@ -1,8 +1,114 @@
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(../fonts/JosefinSans-Regular.ttf)
+}
+
+body, h1, p, button {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: #F5EBB8; /* vaalea beige */
+    color: #000000; /* musta */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header {
+    background-color: #BF5F10; /* ruskea */
+    color: #DB9B31; /* vaaleanruskea */
+    padding: 24px 0;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.769);
+    
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: #838746; /* oliivi */
+    color: #F5EBB8; /* vaalea beige */
+    padding: 16px 0;
+    text-align: center;
+    margin-top: auto;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.721);
+    
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.5rem; /* 24px */
+    margin: 16px 0;
+}
+
+.btn {
+    background-color: #838746; /* oliivi */
+    color: #F5EBB8; /* vaalea beige */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767);
+    
+}
+
+.btn:hover { /* nappi tummenee kun hiiri viedään sen päälle */
+    background-color: #DB9B31; /* vaaleanruskea */
+}
+
+img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
+    transform: rotate(360deg);
+    transition: 2s; 
+    }
+
+.nappi { /*nappien sijainti*/
+    margin: 112px 0;
+}
+main .row {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mango-container {
+    max-width: 100%;
+    width: 300px; 
+    margin-left: 50%;
+    margin-top: 20%;
+}
+
+/*IVANIN CSS*/
+
+
 .btn.selected {
     background-color: #DB9B31; /* Matches the hover color */
 }
-#img.happymango {
-    position: fixed;
-    top: 50px; /* Adjust the top position as needed */
-    left: 50px; /* Adjust the left position as needed */
+
+#question-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain the aspect ratio */
+    width: 250px; /* Adjust the width as needed */
+    margin-bottom: 30px; /* Add some spacing below the image */
+    margin-top: 100px;
+
+}
+
+img#question-image:hover {
+    transform: none; /* Disable spinning for the question image */
 }

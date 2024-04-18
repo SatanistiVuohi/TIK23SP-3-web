@@ -1,53 +1,54 @@
+const path = "./images/img_ivanin_peli/"
 const questions = [
     {
-        image: "image1.jpg",
-        options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+        image: "12_00.png",
+        options: ["12:00", "12:45", "12:30", "12:20"],
         correctAnswer: 1
     },
     {
-        image: "image2.jpg",
-        options: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        image: "12_10.png",
+        options: ["12:00", "12:15", "12:30", "12:10"],
         correctAnswer: 4
     },
     {
-        image: "image1.jpg",
-        options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+        image: "12_25.png",
+        options: ["12:20", "12:25", "12:15", "12:40"],
         correctAnswer: 2
     },
     {
-        image: "image2.jpg",
-        options: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        correctAnswer: 3
+        image: "12_05.png",
+        options: ["12:45", "12:05", "12:15", "12:25"],
+        correctAnswer: 2
     },   
     {
-        image: "image1.jpg",
-        options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-        correctAnswer: 4
+        image: "12_20.png",
+        options: ["12:30", "12:10", "12:20", "12:40"],
+        correctAnswer: 3
     },
     {
-        image: "image2.jpg",
-        options: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        correctAnswer: 3
+        image: "12_15.png",
+        options: ["12:45", "12:15", "12:35", "12:25"],
+        correctAnswer: 2
     },    
     {
-        image: "image1.jpg",
-        options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-        correctAnswer: 2
+        image: "12_35.png",
+        options: ["12:35", "12:45", "12:25", "12:55"],
+        correctAnswer: 1
     },
     {
-        image: "image2.jpg",
-        options: ["Answer A", "Answer B", "Answer C", "Answer D"],
+        image: "12_30.png",
+        options: ["12:10", "12:15", "12:45", "12:30"],
         correctAnswer: 4
     },  
     {
-        image: "image1.jpg",
-        options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+        image: "12_40.png",
+        options: ["12:50", "12:40", "12:30", "12:20"],
         correctAnswer: 2
     },
     {
-        image: "image2.jpg",
-        options: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        correctAnswer: 1
+        image: "12_50.png",
+        options: ["12:20", "12:50", "12:30", "12:10"],
+        correctAnswer: 2
     }
 ];
 
@@ -57,12 +58,13 @@ let points = 0;
 
 function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
-    document.getElementById("question-image").src = currentQuestion.image;
+    document.getElementById("question-image").src = path + currentQuestion.image;
     document.getElementById("result").innerText = "";
     for (let i = 0; i < currentQuestion.options.length; i++) {
         document.getElementsByClassName("btn")[i].innerText = currentQuestion.options[i];
     }
 }
+loadQuestion();
 
 function checkAnswer(optionIndex) {
     const currentQuestion = questions[currentQuestionIndex];
