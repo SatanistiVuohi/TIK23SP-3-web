@@ -100,7 +100,6 @@ document.getElementById("check").addEventListener("click", () => {
             
     } else {
         result.innerHTML = "Ei aivan! Oikea vastaus on " + correctAnswer + "."
-        
         setTimeout(() => {
             nextTask() //Siirry seuraavaan tehtävään
         }, 2000)
