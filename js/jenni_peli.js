@@ -58,10 +58,16 @@ const nextTask = () => { //Muodotetaan seuraava tehtävä kunnes on muodostettu 
         getTask()    
     } else {
         const score = document.querySelector("#score")
-        score.innerHTML = "Peli loppui! Keräsit " + points + " pistettä."
         document.getElementById("task").innerHTML = ""
         showOptions()
         hideField()
+        if (points === 10) {
+            score.innerHTML = "Wau! Kaikki meni oikein! Keräsit " + points + " pistettä."
+        } else if (points === 0) {
+            score.innerHTML = "Hupista! Nyt ei onnistunut mikään. Keräsit " + points + " pistettä."
+        } else {
+            score.innerHTML = "Sehän meni hienosti! Keräsit " + points + " pistettä." 
+        }
     }
 }
 
@@ -89,7 +95,7 @@ document.getElementById("check").addEventListener("click", () => {
         setTimeout(() => { 
             img.classList.remove("rotate")
             nextTask() //Siirry seuraavaan tehtävään
-        }, 1500) //Asetetaan animaation kesto
+        }, 2000) //Asetetaan animaation kesto
         
             
     } else {
@@ -97,12 +103,12 @@ document.getElementById("check").addEventListener("click", () => {
         
         setTimeout(() => {
             nextTask() //Siirry seuraavaan tehtävään
-        }, 1500)
+        }, 2000)
     }
     document.getElementById("answer").value = ""
     setTimeout(() => { 
         result.innerHTML = "" //Asetetaan kerto palautteen näkymiselle
-    }, 1500)
+    }, 2000)
 })
 
 document.querySelector("#newgame").addEventListener("click", () => {
