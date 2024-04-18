@@ -102,7 +102,7 @@ function createOptionElement(option, index) {
 function answer(e) {
     e.preventDefault();
 
-    document.getElementById('answer').disabled = true;
+   // document.getElementById('answer').disabled = true;
 
     let formdata = new FormData(e.currentTarget);
 
@@ -113,19 +113,14 @@ function answer(e) {
         questionElement.classList.add('correct');
         document.getElementById('oikein').style.display = 'block';
         document.getElementById('vaarin').style.display = 'none';
-        document.getElementById('oikeinvaarin').textContent = 'Oikein! :)';
+        document.getElementById('oikeinvaarin').innerHTML = 'Oikein! :)';
     } else {
         questionElement.classList.add('incorrect');
         document.getElementById('oikein').style.display = 'none';
         document.getElementById('vaarin').style.display = 'block';
-        document.getElementById('oikeinvaarin').textContent = 'Äh, väärin meni! :( Oikea vastaus oli: ' + questions[index].answer;
+        document.getElementById('oikeinvaarin').innerHTML = 'Äh, väärin meni! :( Oikea vastaus oli: ' + questions[index].answer;
     }
-
-    // Päivitetään sivulle käyttäjän pisteet
-    document.getElementById('result').textContent =
-        "Pisteesi: " + points + "/" + questions.length;
-
-    setTimeout(nextQuestion, 3000);
+    setTimeout(nextQuestion, 3500);
 
 }
 
@@ -151,13 +146,14 @@ function nextQuestion() {
         document.getElementById('questionform').style.display = 'none';
         document.getElementById('playAgain').style.display = 'block';
         document.getElementById('return').style.display = 'block';
-        document.getElementById('otsikko').textContent = 'Pääsit loppuun!';
+        document.getElementById('otsikko').style.display = 'Pääsit loppuun!';
+        document.getElementById('result').textContent = 'Pisteesi: ' + points + '/' + questions.length;
     }
 
     // Resetoidaan muotoilut
     questionElement.classList.remove('correct', 'incorrect');
     document.getElementById('answer').disabled = false;
-    document.getElementById('oikeinvaarin').textContent = "";
+    document.getElementById('oikeinvaarin').innerHTML = '';
 }
 
 
