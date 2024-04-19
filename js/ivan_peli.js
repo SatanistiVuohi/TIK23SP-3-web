@@ -2,52 +2,52 @@ const path = "./images/img_ivanin_peli/"
 const questions = [
     {
         image: "12_00.png",
-        options: ["12:00", "12:45", "12:30", "12:20"],
+        options: ["12:00", "12:30", "13:30", "11:30"],
         correctAnswer: 1
     },
     {
         image: "12_10.png",
-        options: ["12:00", "12:15", "12:30", "12:10"],
-        correctAnswer: 4
+        options: ["13:00", "14:00", "14:30", "13:30"],
+        correctAnswer: 2
     },
     {
         image: "12_25.png",
-        options: ["12:20", "12:25", "12:15", "12:40"],
+        options: ["16:30", "17:00", "17:30", "15:30"],
         correctAnswer: 2
     },
     {
         image: "12_05.png",
-        options: ["12:45", "12:05", "12:15", "12:25"],
+        options: ["16:30", "13:00", "17:30", "15:30"],
         correctAnswer: 2
     },   
     {
         image: "12_20.png",
-        options: ["12:30", "12:10", "12:20", "12:40"],
+        options: ["17:30", "16:30", "16:00", "15:30"],
         correctAnswer: 3
     },
     {
         image: "12_15.png",
-        options: ["12:45", "12:15", "12:35", "12:25"],
+        options: ["14:00", "15:00", "13:30", "16:30"],
         correctAnswer: 2
     },    
     {
         image: "12_35.png",
-        options: ["12:35", "12:45", "12:25", "12:55"],
+        options: ["19:00", "20:30", "14:00", "14:30"],
         correctAnswer: 1
     },
     {
         image: "12_30.png",
-        options: ["12:10", "12:15", "12:45", "12:30"],
+        options: ["14:30", "14:00", "17:30", "18:00"],
         correctAnswer: 4
     },  
     {
         image: "12_40.png",
-        options: ["12:50", "12:40", "12:30", "12:20"],
+        options: ["20:30", "20:00", "19:30", "16:30"],
         correctAnswer: 2
     },
     {
         image: "12_50.png",
-        options: ["12:20", "12:50", "12:30", "12:10"],
+        options: ["12:30", "22:00", "21:30", "19:30"],
         correctAnswer: 2
     }
 ];
