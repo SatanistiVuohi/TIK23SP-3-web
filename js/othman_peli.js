@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('kuva').classList.add('rotate-image'); // kuva pyörähtää jos oikea vastaus // 
 
             // Tallenna pistemäärät SessionStorageen // 
-            sessionStorage.setItem('correctCount', correctCount);
-            sessionStorage.setItem('incorrectCount', incorrectCount);
+            sessionStorage.setItem('correctCount_1', correctCount);
+            sessionStorage.setItem('incorrectCount1', incorrectCount);
 
         } else {
             // Aseta viive seuraavan kysymyksen näyttämiseen
