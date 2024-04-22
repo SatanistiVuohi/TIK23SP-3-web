@@ -8,8 +8,8 @@ body, h1, p, button {
 }
 
 body {
-    background-color: #F5EBB8; /* light beige */
-    color: #000000; /* black */
+    background-color: #F5EBB8;
+    color: #000000; 
     margin: 0;
     height: 100vh;
     display: flex;
@@ -17,8 +17,8 @@ body {
 }
 
 header {
-    background-color: #BF5F10; /* brown */
-    color: #DB9B31; /* light brown */
+    background-color: #BF5F10; 
+    color: #DB9B31; 
     padding: 24px 0;
     text-align: center;
 }
@@ -31,47 +31,47 @@ main {
 }
 
 footer {
-    background-color: #838746; /* olive */
-    color: #F5EBB8; /* light beige */
+    background-color: #838746; 
+    color: #F5EBB8; 
     padding: 16px 0;
     text-align: center;
 }
 
 h1 {
     margin: 0;
-    font-size: 1.875rem; /* 30px */
+    font-size: 1.875rem; 
     font-weight: 700;
 }
 
 p {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
     margin: 16px 0;
 }
 
 input[type="number"] {
-    margin-bottom: 16px; /* Lisää väliä vastauskentän ja muiden elementtien välille */
+    margin-bottom: 16px; 
 }
 
 button {
-    margin-top: 16px; /* Lisää väliä nappien ja muiden elementtien välille */
-    margin-bottom: 16px; /* Lisää väliä nappien ja muiden elementtien välille */
-    background-color: #838746; /* olive */
-    color: #F5EBB8; /* light beige */
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: #838746; 
+    color: #F5EBB8; 
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    font-size: 1rem; /* 16px */
+    font-size: 1rem; 
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button + button {
-    margin-left: 16px; /* Lisää väliä painikkeiden välille */
+    margin-left: 16px; 
 }
 
 button:hover {
-    background-color: #DB9B31; /* light brown */
+    background-color: #DB9B31; 
 }
 
 #kuva {
