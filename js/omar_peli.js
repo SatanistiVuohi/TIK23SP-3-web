@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         document.querySelector('input').value = '';
+        sessionStorage.setItem('correctCount_4', correctCount);
     });
 });
 

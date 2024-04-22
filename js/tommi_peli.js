@@ -54,7 +54,7 @@ let questions = [
 ];
 
 let index = 0;
-let points = 0;
+let points_2 = 0;
 
 // Lisätään tapahtumankäsittelijä submit-tapahtumalle lomakkeessa
 document.getElementById('questionform').addEventListener('submit', answer);
@@ -109,11 +109,12 @@ function answer(e) {
     // Tarkistetaan valinta ja verrataan sitä oikeaan vastukseen
     // Vaihdetaan kuva ja teksti riippuen meinikö vastaus väärin vai oikein
     if (formdata.get('selection') === questions[index].answer) {
-        points++;
+        points_2++;
         questionElement.classList.add('correct');
         document.getElementById('oikein').style.display = 'block';
         document.getElementById('vaarin').style.display = 'none';
         document.getElementById('oikeinvaarin').innerHTML = 'Oikein! :)';
+        sessionStorage.setItem('correctCount_6', points_2);
     } else {
         questionElement.classList.add('incorrect');
         document.getElementById('oikein').style.display = 'none';
@@ -147,7 +148,7 @@ function nextQuestion() {
         document.getElementById('playAgain').style.display = 'block';
         document.getElementById('return').style.display = 'block';
         document.getElementById('otsikko').style.display = 'Pääsit loppuun!';
-        document.getElementById('result').textContent = 'Pisteesi: ' + points + '/' + questions.length;
+        document.getElementById('result').textContent = 'Pisteesi: ' + points_2 + '/' + questions.length;
     }
 
     // Resetoidaan muotoilut

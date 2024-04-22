@@ -58,7 +58,7 @@ function getEventListener() {
     if (correctCount + incorrectCount < 10) { 
         startRound(); // Aloita uusi kierros
     } else {
-        // TODO: tallenna pisteet tässä
+        sessionStorage.setItem('correctCount_2', correctCount);
         showOptions(); //Näytä 'options' pelin päätyttyä
     }
 }

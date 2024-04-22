@@ -54,7 +54,7 @@ const questions = [
 
 
 let currentQuestionIndex = 0;
-let points = 0;
+let points_1 = 0;
 
 function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
@@ -71,7 +71,7 @@ function checkAnswer(optionIndex) {
     const selectedButton = document.getElementsByClassName("btn")[optionIndex];
     if (optionIndex === currentQuestion.correctAnswer - 1) {
         document.getElementById("result").innerText = "Oikein!";
-        points++;
+        points_1++;
     } else {
         document.getElementById("result").innerText = "Väärin.";
     }
@@ -88,7 +88,8 @@ function loadNextQuestion() {
     if (currentQuestionIndex < questions.length) {
         loadQuestion();
     } else {
-        document.getElementById("result").innerText = "Olet suorittanut pelin. Pisteesi: " + points;
+        sessionStorage.setItem('correctCount_5', points_1);
+        document.getElementById("result").innerText = "Olet suorittanut pelin. Pisteesi: " + points_1;
         document.getElementById("playAgainButton").style.display = "block";
     }
 }
@@ -102,3 +103,4 @@ function navigateToPage() {
 }
 
 window.onload = loadQuestion;
+
