@@ -61,6 +61,7 @@ const nextTask = () => { //Muodotetaan seuraava tehtävä kunnes on muodostettu 
         document.getElementById("task").innerHTML = ""
         showOptions()
         hideField()
+        sessionStorage.setItem('correctCount_3', points)
         if (points === 10) {
             score.innerHTML = "Wau! Kaikki meni oikein! Keräsit " + points + " pistettä."
         } else if (points === 0) {
