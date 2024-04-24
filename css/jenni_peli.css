@@ -1,4 +1,4 @@
-#answer {
+#answer { /*Vastauskentän muotoilu*/
     border-radius: 5px;
     height: 3rem;
 }
@@ -13,5 +13,5 @@
 }
 
 #back, #newgame, #b1, #b2, #b3, #b4, #b5, #b10, #answer, #check {
-    display: none;
+    display: none; /*Elementtien esitystapa on oletuksena piilotettu*/
 }
