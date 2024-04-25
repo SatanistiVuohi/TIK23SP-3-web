@@ -54,7 +54,7 @@ p {
     margin: 16px 0;
 }
 
-.btn {
+.btn, #playAgainButton {
     background-color: #838746; /* oliivi */
     color: #F5EBB8; /* vaalea beige */
     padding: 8px 16px;
@@ -68,7 +68,7 @@ p {
     
 }
 
-.btn:hover { /* nappi tummenee kun hiiri viedään sen päälle */
+.btn:hover, #playAgainButton:hover { /* nappi tummenee kun hiiri viedään sen päälle */
     background-color: #DB9B31; /* vaaleanruskea */
 }
 
@@ -97,18 +97,18 @@ main .row {
 
 
 .btn.selected {
-    background-color: #DB9B31; /* Matches the hover color */
+    background-color: #DB9B31; /* Linkki Bootstrapin CSS-tiedostoon */
 }
 
 #question-image {
-    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
-    height: auto; /* Maintain the aspect ratio */
-    width: 250px; /* Adjust the width as needed */
-    margin-bottom: 30px; /* Add some spacing below the image */
-    margin-top: 100px;
+    max-width: 100%; /* Varmista, että kuva ei ylitä sen sisältäjän leveyttä */
+    height: auto; /* Säilytä kuvasuhteen */
+    width: 250px; /* Säädä leveyttä tarpeen mukaan */
+    margin-bottom: 30px; /* Lisää hieman tilaa kuvan alle */
+    margin-top: 100px; /* Lisää tilaa kuvan yläpuolelle */
 
 }
 
 img#question-image:hover {
-    transform: none; /* Disable spinning for the question image */
+    transform: none; /* Poista kuvan pyöriminen kun hiiri vie sen päälle */
 }

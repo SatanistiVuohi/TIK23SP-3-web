@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kellonajat</title>
+<!-- Bootstrap CSS-tiedoston linkki -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<!-- Oma CSS-tiedosto -->
     <link rel="stylesheet" href="./css/ivan_peli.css">
 </head>
 
@@ -13,10 +15,12 @@
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
+<!-- Navigaatiopalkki -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavAltMarkup">
+<!-- Navigaatiopalkin linkit -->
                     <div class="navbar-nav grid gap-2 h3">
                         <a class="nav-link" href="index.html">Koti</a>
                         <a class="nav-link active" aria-current="page" href="pelit.html">Pelit</a>
@@ -37,6 +41,7 @@
             
             <div class="col-md-5 p-4 mx-auto"> <!-- Lisätty mx-auto -->
                 <div class="container">
+<!-- Kysymyskuva ja vastausvaihtoehdot -->
                     <img id="question-image" src="./images/img_ivanin_peli/12_00.png" alt="Picture">
                     <div class="options">
                         <button class="btn" onclick="checkAnswer(0)">Option 1</button>
@@ -45,15 +50,19 @@
                         <button class="btn" onclick="checkAnswer(3)">Option 4</button>
                     </div>
                     <p id="result"></p>
+<!-- Palaa takaisin ja pelaa uudestaan -painikkeet -->
+
                     <a class="btn btn-primary" href="./pelit.html" style="display: block;">Palaa takaisin</a><br>
-                    <button id="playAgainButton" class="btn btn-primary" style="display: none;" onclick="resetGame()">Pelaa uudestaan</button>
+                    <button id="playAgainButton" style="display: none;" onclick="resetGame()">Pelaa uudestaan</button>
                 </div>
             </div>            
         </div>
     </main>
-    <footer>            
+    <footer>
+<!-- Tekijänoikeustiedot -->
         <p class="text-center">© 2024 Matikka-Mango-Ivan Jirki</p>
     </footer>
+<!-- jQuery ja Bootstrap JavaScript-tiedostot -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXh+clISz1zjrhA1DH0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./js/ivan_peli.js"></script>

@@ -14,6 +14,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
 header {
@@ -21,6 +22,8 @@ header {
     color: #DB9B31; /* vaaleanruskea */
     padding: 24px 0;
     text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.719);
+
 }
 
 main .container {
@@ -31,11 +34,14 @@ main .container {
 }
 
 footer {
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.568);
     background-color: #838746; /* oliivi */
     color: #F5EBB8; /* vaalea beige */
     padding: 16px 0;
     text-align: center;
     margin-top: auto;
+
+
 }
 
 h1 {
@@ -59,6 +65,8 @@ p {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.863);
+
 }
 
 .btn:hover { /* nappi tummenee kun hiiri viedään sen päälle */
@@ -77,6 +85,7 @@ img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
 .card-img {  /*viittaus pelit sivun korttien kuviin*/
     max-width: 70%;
     object-fit: cover;
+    
 }
 
 .card { /*pelit-sivun korttien muotoilu*/
@@ -86,6 +95,8 @@ img:hover { /*kuva pyörähtää kun hiiri viedään sen päälle*/
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.671);
+
 }
 
 .nappi { /*nappien sijainti*/
