@@ -1,18 +1,18 @@
-let rand_num1 = 0; //Ensimmäinen satunnaisluku
-let rand_num2 = 0; //Toinen satunnaisluku
-let correctCount = 0; //Laskuri oikeille vastauksille
-let incorrectCount = 0; //Laskuri väärille vastauksille
-let isPositive = false; //Onko lasku positiivinen vai negatiivinen, boolean operator
+let rand_num1 = 0;
+let rand_num2 = 0;
+let correctCount = 0;
+let incorrectCount = 0;
+let isPositive = false;
 
-// Funktio satunnaisen kokonaisluvun generoimiseksi annetulta väliltä
+// Funktio satunnaisen kokonaisluvun generoimiseksi annetulta väliltä. Lähde: Aikaisemmalla kurssilla tehty tehtävä, jossa harjoiteltiin luvun arpomista.
 const getRandomIntNumberInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 // Funktio kierroksen aloittamiseksi
 const startRound = () => {   
-    rand_num1 = getRandomIntNumberInRange(0, 100); // Generoidaan ensimmäinen satunnaisluku
-    isPositive = Math.random() < 0.5; // Arvotaan, onko lasku positiivinen vai negatiivinen
+    rand_num1 = getRandomIntNumberInRange(0, 100);
+    isPositive = Math.random() < 0.5;
     let range;
     if (isPositive) { 
         range = 100-rand_num1; // Lasketaan toisen luvun mahdollinen maksimiarvo, jos lasku on positiivinen
@@ -28,8 +28,8 @@ const startRound = () => {
     
 };
 
-//Kierros alkaa heti kun sivu on latautunut
-addEventListener("DOMContentLoaded", () => {
+//Kierros alkaa heti kun sivu on latautunut. Lähde: https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+addEventListener("DOMContentLoaded", () => {  
     startRound();
 });
 
@@ -40,7 +40,7 @@ document.querySelector('#calculate').addEventListener('click', () => {
 
 
 // Tapahtumankäsittelijä Enter-näppäimelle
-document.querySelector('input').addEventListener("keypress", (event) => {
+document.querySelector('input').addEventListener("keydown", (event) => { //Lähde: https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
     // Jos käyttäjä painaa Enter-näppäintä
     if (event.key === "Enter") {
         getEventListener();
@@ -49,17 +49,17 @@ document.querySelector('input').addEventListener("keypress", (event) => {
 
 // Funktio vastaustapahtumien käsittelyä varten
 function getEventListener() {
-    const answer = Number(document.querySelector('input').value); //Luetaan käyttäjän syöttämä arvo muuttujaan
-    let correctAnswer = getCorrectAnswer(); // Haetaan oikea vastaus
-    checkAnswer(answer, correctAnswer); // Tarkistetaan vastaus
+    const answer = Number(document.querySelector('input').value);
+    let correctAnswer = getCorrectAnswer(); 
+    checkAnswer(answer, correctAnswer);
 
-    document.querySelector('input').value = '0'; // Tyhjennetään syötekenttä
+    document.querySelector('input').value = '0';
     // Jos kierroksia ei ole vielä pelattu tarpeeksi
     if (correctCount + incorrectCount < 10) { 
-        startRound(); // Aloita uusi kierros
+        startRound();
     } else {
         sessionStorage.setItem('correctCount_2', correctCount);
-        showOptions(); //Näytä 'options' pelin päätyttyä
+        showOptions();
     }
 }
 
@@ -83,17 +83,16 @@ function showOptions() {
     game.style.display = "none"; // Piilotetaan peli
     var options = document.getElementById("options");
     options.style.display = ''; // Näytetään vaihtoehdot
-    document.querySelector('#pisteet').textContent = `Sait ${correctCount} pistettä!` // Näytetään pisteet
+    document.querySelector('#pisteet').textContent = `Sait ${correctCount} pistettä!`
 }
 
 // Funktio vastauksen tarkistamiseen
 function checkAnswer(answer, correctAnswer) {
-    // Jos vastaus on oikein
     if (answer === correctAnswer) {
-        document.querySelector('#result').textContent = 'Vastauksesi oli oikein!'; // Näytetään viesti
+        document.querySelector('#result').textContent = 'Vastauksesi oli oikein!';
         correctCount++; // Kasvatetaan oikeiden vastausten laskuria
-    } else { // Jos vastaus on väärin
-        document.querySelector('#result').textContent = `Vastauksesi oli väärin, oikea vastaus on ${correctAnswer}!`; // Näytetään viesti
+    } else {
+        document.querySelector('#result').textContent = `Vastauksesi oli väärin, oikea vastaus on ${correctAnswer}!`;
         incorrectCount++; // Kasvatetaan väärin vastattujen laskuria
     }
 }
