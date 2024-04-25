@@ -21,6 +21,7 @@ header {
     color: #DB9B31; /* vaaleanruskea */
     padding: 24px 0;
     text-align: center;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767);
 }
 
 main .container {
@@ -28,6 +29,7 @@ main .container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767);
 }
 
 footer {
@@ -39,6 +41,7 @@ footer {
     flex-shrink: 0;
     bottom: 0;
     width: 100%;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.721);
 }
 
 h1 {
@@ -63,6 +66,7 @@ p {
     transition: background-color 0.3s ease;
     margin-top: 10px;
     margin-bottom: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767);
 }
 #calculate:hover{
     background-color: #DB9B31; /* Vaaleanruskea */
@@ -70,6 +74,7 @@ p {
 #kuva{
     width: 300px;
     height: auto;
+    
 }
 .rotate-image {
         transform: rotate(360deg);
@@ -97,12 +102,13 @@ p {
     margin-bottom: 10px;
     margin-right: 5px;
     font-size: 24px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767);
 }
 .progress-bar {
     background-color: #DB9B31;
     font-size: large;
     height: 30px;
-    
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767); 
 }
 #correctCount {
     margin-top: 100px;
@@ -115,6 +121,7 @@ input[type="number"] {  /*syöttökentän muutokset*/
     width: 150px; 
     max-width: 100%; 
     margin-right: 10px; 
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767); 
 }
 
 #calculate {
@@ -124,6 +131,7 @@ input[type="number"] {  /*syöttökentän muutokset*/
     border-radius: 1rem; 
     font-size: 1rem; 
     border-width: 1px; 
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.767); 
 }
 
 #calculate:hover, #calculate:active {
