@@ -1,0 +1,52 @@
+.progress-bar {
+    background-color: #DB9B31;
+    height: 30px;
+}
+/* Taulukon customointi */
+.container-lg{
+    padding-top: 30px;
+    padding-left: 1px;
+    display: flex;
+    align-items: center;
+}
+.table {
+    width: 50%;
+    border-collapse: collapse;
+    background-color:#F5EBB8;
+    border: 1px solid #DB9B31; /* Lisää reunat taulukolle */
+}
+.table th {
+    background-color: #F5EBB8; /* Background color for header cells */
+    padding: 5px; /* Padding for header cells */
+    border: 3px solid #838746;
+    border-radius: 10px;
+    text-align: center;
+}
+.table td {
+    padding: 10px; /* Padding for data cells */
+    background-color: #F5EBB8;
+    border: 3px solid #838746;
+    border-radius: 10px;
+    text-align: center;
+}
+.table img {
+    max-width: 50px; /* Maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+}
+#mango{
+    max-width: 50%;
+    height: auto;
+    padding-top: 10px;
+    padding-left: 80px;
+}
+/*puhekupla*/
+.speech-bubble {
+    position: absolute; /* Aseta sijainti absoluuttiseksi */
+    top: 270px;
+    right: 300px;
+    background-color: #DB9B31;
+    border: 3px solid #838746;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
