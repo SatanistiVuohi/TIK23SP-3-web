@@ -67,16 +67,17 @@ var resultsElement = document.getElementById("results");
 var resultTextElement = document.createElement("p");
 resultsElement.appendChild(resultTextElement);
 
-if (totalScore >= 53 && totalScore <= 60) {
-    resultTextElement.classList.add("range-53-60"); // Lisää luokka 'range-53-60'
-    resultTextElement.textContent = "Erinomainen!";
-} else if (totalScore >= 46 && totalScore <= 52) {
-    resultTextElement.classList.add("range-46-52"); // Lisää luokka 'range-46-52'
-    resultTextElement.textContent = "Hyvä suoritus!";
-} else if (totalScore >= 38 && totalScore <= 45) {
-    resultTextElement.classList.add("range-38-45"); // Lisää luokka 'range-38-45'
-    resultTextElement.textContent = "Kohtalainen suoritus." ;
-} else if (totalScore >= 30 && totalScore <= 37) {
-    resultTextElement.classList.add("range-30-37"); // Lisää luokka 'range-30-37'
-    resultTextElement.textContent = "Tarvitset parannusta.";
+// Pistetaulukon palautteet
+if (totalScore >= 46 && totalScore <= 60) {
+    resultTextElement.classList.add("range-46-60"); 
+    resultTextElement.textContent = "Erinomaista! Sehän meni ihan nappiin!";
+} else if (totalScore >= 30 && totalScore <= 45) {
+    resultTextElement.classList.add("range-30-45"); 
+    resultTextElement.textContent = "Hienoa! Hyvin menee!";
+} else if (totalScore >= 15 && totalScore <= 29) {
+    resultTextElement.classList.add("range-15-29"); 
+    resultTextElement.textContent = "Hyvä yritys! Harjoittele vielä!" ;
+} else if (totalScore >= 1 && totalScore <= 14) {
+    resultTextElement.classList.add("range-1-14"); 
+    resultTextElement.textContent = "Yritä uudelleen! Harjoitus tekee mestarin!";
 }

@@ -1,16 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .progress-bar {
     background-color: #DB9B31;
     height: 30px;
 }
-/* Taulukon customointi */
-.container-lg{
-    padding-top: 30px;
-    padding-left: 1px;
-    display: flex;
-    align-items: center;
-}
+
 .table {
-    width: 50%;
+    width: 100%;
+    height: 65%;
     border-collapse: collapse;
     background-color:#F5EBB8;
     border: 1px solid #DB9B31; /* Lisää reunat taulukolle */
@@ -23,30 +22,37 @@
     text-align: center;
 }
 .table td {
-    padding: 10px; /* Padding for data cells */
+    padding: 5px; /* Padding for data cells */
     background-color: #F5EBB8;
     border: 3px solid #838746;
     border-radius: 10px;
     text-align: center;
 }
 .table img {
-    max-width: 50px; /* Maximum width for images */
+    max-width: 70px; /* Maximum width for images */
     height: auto; /* Maintain aspect ratio */
 }
+
+.progress {
+    height: 30px;
+}
 #mango{
-    max-width: 50%;
-    height: auto;
-    padding-top: 10px;
-    padding-left: 80px;
+   max-width: 100%;
+   width: 400px;
 }
 /*puhekupla*/
 .speech-bubble {
-    position: absolute; /* Aseta sijainti absoluuttiseksi */
-    top: 270px;
-    right: 300px;
     background-color: #DB9B31;
     border: 3px solid #838746;
+    display: flex;
+    flex-direction: column;
+    max-height: 320px;
     padding: 10px;
-    border-radius: 10px;
+    text-align: center;
+    border-radius: 10px 10px 10px 0px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table td p {
+    font-size: 1rem;
 }

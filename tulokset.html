@@ -32,101 +32,124 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <div class="container-lg">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Peli</th>
-                        <th scope="col">Edistyminen</th>
-                        <th scope="col">Tulos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"><img src="./images/matikkamerkit.png" alt="matikkamerkit"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar1" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_1"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./images/matikkamerkit.png" alt="matikkamerkit"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar2" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_2"></p>
-                        </td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./images/kerto.png" alt="kerto"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar3" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_3"></p>
-                        </td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./images/jako.png" alt="jako"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar4" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_4"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./images/kello.png" alt="kello"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar5" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_5"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./images/mittanauha.png" alt="mittanauha"></th>
-                        <td>
-                            <div class="progress" style="height: 30px;">
-                                <div id="progress-bar6" class="progress-bar" role="progressbar" style="width: 0%;"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                            </div>
-                        </td>
-                        <td>
-                            <p id="correctCount_6"></p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="speech-bubble">
-                <div id="results">
+        <div class="container-fluid row my-5">
+            <div class="col-lg-5">   
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Peli</th>
+                            <th scope="col">Edistyminen</th>
+                            <th scope="col">Tulos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><img src="./images/matikkamerkit.png" alt="matikkamerkit"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar1" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="align-items-center">
+                                    <p>+ ja - laskut 0-20</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_1"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="./images/matikkamerkit.png" alt="matikkamerkit"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar2" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p>+ ja - laskut 0-100</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_2"></p>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="./images/kerto.png" alt="kerto"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar3" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p>Kertolaskut</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_3"></p>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="./images/jako.png" alt="jako"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar4" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p>Jakolaskut</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_4"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="./images/kello.png" alt="kello"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar5" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p>Kellonajat</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_5"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="./images/mittanauha.png" alt="mittanauha"></th>
+                            <td>
+                                <div class="progress">
+                                    <div id="progress-bar6" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p>Mittayksiköt</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="correctCount_6"></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <img src="./images/mangohappy.png" alt="mangohappy" class="img-fluid mx-1" id="mango">
+            </div>
+            <div class="col ms-3 p-3 d-flex align-items-center justify-content-center speech-bubble" id="results">
+                <div>   
                     <p id="total"></p>
+                </div> 
+                <div>
                     <p id="resultText"></p>
                 </div>
             </div>
-            <img src="./images/mangohappy.png" alt="mangohappy" id="mango">
         </div>
     </main>
 
