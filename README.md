@@ -1,6 +1,8 @@
-TIK23SP-3 ryhmän Web-projekti!
+# TIK23SP Web-projekti Ryhmä 3 -- Matikka-Mango
 
-Osallistujat:
+ Tämä sivusto on suunnattu 1-2-luokkalaisille matematiikan opiskeluun. Voit harjoitella yhteen- ja vähennyslaskuja, jako- ja kertolaskuja sekä kellonaikoja ja pituuden mittayksiköitä innostavalla tavalla.
+
+### Tekijät:
   - Tommi Kumpula (SatanistiVuohi)
   - Reetta-Maria Kivelä (jupe91)
   - Othman Al-Kubaisi (AlkubaisiOthman)
@@ -8,5 +10,6 @@ Osallistujat:
   - Jenni Oksman (jennioksman)
   - Ivan Jirki (IvanJirki)
 
-Hacknplan: 
-https://app.hacknplan.com/p/202056/kanban?userId=0&boardId=555205
+### [HacknPlan](https://app.hacknplan.com/p/202056/kanban?userId=0&boardId=555205) ||  [Sivut](Coming soon!)
+
+![Matikka-Mango](./images/mangohappy.png)

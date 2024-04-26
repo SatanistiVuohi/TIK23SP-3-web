@@ -162,5 +162,5 @@ function resetGame() {
     window.location.reload();
 }
 function returnPelit() {
-    window.location.href = 'pelit.html';
+    window.location.href = './pelit.html';
 }
