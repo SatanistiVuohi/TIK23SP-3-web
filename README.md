@@ -10,6 +10,6 @@
   - Jenni Oksman (jennioksman)
   - Ivan Jirki (IvanJirki)
 
-### [HacknPlan](https://app.hacknplan.com/p/202056/kanban?userId=0&boardId=555205) ||  [Sivut](Coming soon!)
+### [HacknPlan](https://app.hacknplan.com/p/202056/kanban?userId=0&boardId=555205) ||  [Sivut](https://www.students.oamk.fi/~c3alot00/TIK23SP-3-web/)
 
 ![Matikka-Mango](./images/mangohappy.png)
