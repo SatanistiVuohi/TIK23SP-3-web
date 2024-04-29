@@ -5,15 +5,18 @@ let incorrectCount = 0;
 let attempts = 0;
 let currentProgress = 0;
 const maxAttempts = 10;
-
+//päivittää pistemäärän näytön 
 const updateScore = () => {
     document.querySelector('#correctCount').textContent = `Oikeat vastaukset: ${correctCount}`;
     document.querySelector('#incorrectCount').textContent = `Väärät vastaukset: ${incorrectCount}`;
 }
 
+// Generoi satunnaisen kokonaisluvun annetulta väliltä
 const getRandomIntNumberInRange = (min, max) => {
     return Math.floor(Math.random() * max) + min;
 }
+
+// Asettaa satunnaiset numerot ja laskutoimituksen näytölle
 
 const randomizeNumbers = () => {
     rand_num1 = getRandomIntNumberInRange(1, 10);
@@ -30,10 +33,13 @@ const randomizeNumbers = () => {
     }
 }
 
+// Odottaa, että DOM on valmis ja alustaa pelin
+
 document.addEventListener("DOMContentLoaded", () => {
     randomizeNumbers();
     updateScore();
 
+    // Tapahtumankäsittelijä Vastaa-napille
     document.querySelector('#calculate').addEventListener('click', () => {
         if (attempts >= maxAttempts) {
             endGame();
@@ -47,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.style.fontWeight = 'bold';
         messageElement.style.color = '#BF5F10';
 
+        // Vastauksen tarkistaminen
         if (answer === correctAnswer) {
             messageElement.textContent = 'Oikein!';
             correctCount++;
@@ -56,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const calculateButton = document.querySelector('#calculate');
         attempts++;
-        updateProgressBar();
+        updateProgressBar(); // päivittää edistymispalkin
         if (attempts >= maxAttempts) {
             document.querySelector('#calculate').disabled = true; // Deaktivoi Vastaa-nappi
             if (calculateButton) {
                 calculateButton.style.display = 'none'; //  Vastaa-nappi poistuu 
             }
             endGame();
-            document.getElementById('kuva').classList.add('rotate-image'); // kuva pyörähtää jos oikea vastaus // 
+            document.getElementById('kuva').classList.add('rotate-image'); 
 
             // Tallenna pistemäärät SessionStorageen // 
             sessionStorage.setItem('correctCount_1', correctCount);
@@ -87,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         disableCalculateButton(); // Poista Vastaa-nappi väliaikaisesti käytöstä
     });
 
+    // pelin päättymisen käsittelijä
     const endGame = () => {
         if (!document.querySelector('.play-again-button')) {
             const playAgainButton = document.createElement('button');
@@ -117,23 +125,23 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('#container').appendChild(nextLevelButton);
         }
     }
-
+    // Päivittää edistymispalkin
     function updateProgressBar() {
         currentProgress = (attempts / maxAttempts) * 100;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
-
+    // Nollaa edistymispalkin
     function resetProgressBar() {
         currentProgress = 0;
         document.getElementById("progress-bar").style.width = currentProgress + "%";
         document.getElementById("progress-bar").innerHTML = currentProgress + "%";
     }
-
+    // Poistaa vastaa-napin käytöstä väliaikaisesti
     function disableCalculateButton() {
         document.querySelector('#calculate').disabled = true;
     }
-
+    // Aktivoi vastaa-napin
     function enableCalculateButton() {
         document.querySelector('#calculate').disabled = false;
     }
