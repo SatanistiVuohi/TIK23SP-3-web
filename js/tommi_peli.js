@@ -147,7 +147,7 @@ function nextQuestion() {
         document.getElementById('questionform').style.display = 'none';
         document.getElementById('playAgain').style.display = 'block';
         document.getElementById('return').style.display = 'block';
-        document.getElementById('otsikko').style.display = 'Pääsit loppuun!';
+        document.getElementById('otsikko').textContent = 'Pääsit loppuun!';
         document.getElementById('result').textContent = 'Pisteesi: ' + points_2 + '/' + questions.length;
     }
 
