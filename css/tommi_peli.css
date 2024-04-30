@@ -1,4 +1,10 @@
-.btn {
+img {
+    max-width: 100%;
+    margin: 50px;
+    width: 60%;
+}
+
+.btn { /*Nappien muotoilut joka kohtaan*/
     margin: 10px;
     width: 100px;
 }
@@ -13,12 +19,6 @@
 
 .btn:disabled {
     background-color: #DB9B31;
-}
-
-img {
-    max-width: 100%;
-    margin: 50px;
-    width: 60%;
 }
 
 .btn-check {
