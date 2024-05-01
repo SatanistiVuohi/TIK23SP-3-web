@@ -1,4 +1,5 @@
-const path = "./images/img_ivanin_peli/";
+const path = "./images/img_ivanin_peli/";  // https://pixabay.com/
+
 const questions = [
     {
         image: "12_00.png",
